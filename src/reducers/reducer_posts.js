@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { FETCH_POSTS, FETCH_POST } from '../actions';
+import { FETCH_POSTS, FETCH_POST, CREATE_POST } from '../actions';
 
 export default function (state = {}, action) {
     switch(action.type) {
@@ -7,7 +7,7 @@ export default function (state = {}, action) {
             return _.mapKeys(action.payload.data, 'id');
             
         case FETCH_POST:
-            return {...state, [action.payload.data.id]: action.payload.data}; 
+            return {...state, [action.payload.data.id]: action.payload.data};
             
         default:
             return state;
